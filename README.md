@@ -1,4 +1,4 @@
-# Prueba Técnica para SalesForce
+# Prueba Técnica para ProContacto
 
 A continuación se muestra el desarrollo y solución de cada uno de los ejercicios solicitados en la prueba.
 
