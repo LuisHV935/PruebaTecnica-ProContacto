@@ -22,10 +22,10 @@ Las herramientas solicitadas ya las he trabajado anteriormente así que no fue n
 | Git y Git Bash | Disponible |
 
 ## VS:
-![Evidencia de la instalación de la herramienta.](Imagenes/Instalacion%20-%20VS.png)
+[Evidencia de la instalación de la herramienta.](Imagenes/Instalacion%20-%20VS.png)
 
 ## Git y Git Bash:
-![Evidencia de la instalación de la herramienta.](Imagenes/Instalacion%20-%20git%20%20y%20git%20bash.png)
+[Evidencia de la instalación de la herramienta.](Imagenes/Instalacion%20-%20git%20%20y%20git%20bash.png)
 
 <a id="e2"></a>
 ## Ejercicio 2: Preguntas Teóricas
@@ -157,13 +157,13 @@ Content-Type especifica qué formato se está enviando con la petición.
 Este ejercicio nos pide hacer ciertas peticiones al siguiente endpoint: `https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json`.
 
 ## Primera petición GET:
-![Resultado de la primera petición GET hecha en postman al endpoint.](Imagenes/PeticionGET1.png)
+[Resultado de la primera petición GET hecha en postman al endpoint.](Imagenes/PeticionGET1.png)
 
 ## Petición POST
-![Resultado de la petición POST hecha en postman al endpoint.](Imagenes/PeticionPOST1.png)
+[Resultado de la petición POST hecha en postman al endpoint.](Imagenes/PeticionPOST1.png)
 
 ## Segunda petición GET:
-![Resultado de la segunda petición GET hecha en postman al endpoint.](Imagenes/PeticionGET2.png)
+[Resultado de la segunda petición GET hecha en postman al endpoint.](Imagenes/PeticionGET2.png)
 
 ### Diferencias entre la primera y tercera petición
 Cuando se hace la primera petición, obtenemos como resultado un JSON con dos registros. Sin embargo, entre la primera y la tercera petición se realiza una segunda, la cual es una petición POST que contiene el siguiente body:
@@ -452,7 +452,7 @@ Artículo de la base de conocimiento (Knowledge Base) que contiene soluciones do
 ### Esquema de relaciones
 Anteriormente se presentó la descripción detallada de los objetos estándar de Salesforce, los cuales tienen múltiples relaciones entre sí. En este esquema, nos enfocaremos exclusivamente en las relaciones intrínsecas, aquellas que son fundamentales y definitorias de cada objeto según la configuración estándar de Salesforce, excluyendo relaciones opcionales o personalizadas.
 
-![Esquema de las relaciones entre los objetos antes descritos.](Imagenes/Relaciones.drawio.png)
+[Esquema de las relaciones entre los objetos antes descritos.](Imagenes/Relaciones.drawio.png)
 
 <a id="e6"></a>
 ## Ejercicio 6: SalesForce
@@ -733,7 +733,42 @@ Sin duda, esta fue la prueba técnica más larga y desafiante que he realizado; 
 
 Me permitió reforzar y adquirir nuevos conocimientos sobre el desarrollo de sistemas funcionales y optimizados, aplicando buenas prácticas y resolviendo problemas reales en un entorno Salesforce.
 
+## Fuentes Consultadas
 
+La siguiente documentación fue consultada para la elaboración de los conceptos teóricos y la comprensión del ecosistema Salesforce presentados en esta prueba técnica:
+
+### Documentación Oficial de Salesforce
+1. **Salesforce Help Articles**  
+   Portal centralizado de documentación y soluciones de Salesforce  
+   https://help.salesforce.com/s/articleView
+
+2. **Salesforce Object Reference**  
+   Referencia completa de objetos API y sus campos  
+   https://developer.salesforce.com/docs/atlas.en-us.object_reference.meta/object_reference/sforce_api_objects_list.htm
+
+### Conceptos Fundamentales de CRM
+3. **¿Qué es CRM?**  
+   Definición y fundamentos de Customer Relationship Management  
+   https://www.salesforce.com/mx/crm/what-is-crm/
+
+4. **Salesforce Articles**  
+   Recursos educativos y mejores prácticas  
+   https://www.salesforce.com/mx/resources/articles
+
+### Especializaciones y Verticales
+5. **Health Cloud**  
+   Soluciones Salesforce para el sector salud y ciencias de la vida  
+   https://www.salesforce.com/mx/healthcare-life-sciences/health-cloud/
+
+### Métricas y Performance
+6. **Indicadores Clave de Desempeño (KPIs)**  
+   Guía completa sobre definición y medición de KPIs  
+   https://asana.com/es/resources/key-performance-indicator-kpi
+
+### Comunidad y Noticias
+7. **SalesforceBen**  
+   Portal independiente con noticias, análisis y recursos de la comunidad Salesforce  
+   https://www.salesforceben.com
 
 ---
 *Documento técnico preparado por Luis Alberto Hernández*
