@@ -772,7 +772,7 @@ public class ContactTriggerTest {
 }
 ```
 ### Overall:
-![Resultados del Test](Imagenes/Captura de pantalla 2026-02-03 235926.png)
+![Resultados del Test](Imagenes/Captura%20de%20pantalla%202026-02-03%20235926.png)
 ### Test para la clase EjercicioIntegrador
 ```
 @isTest
@@ -803,7 +803,7 @@ public class EjercicioIntegradorTest {
 }
 ```
 ### Overall:
-![Resultados del Test](Imagenes/Captura de pantalla 2026-02-04 002105.png)
+![Resultados del Test](Imagenes/Captura%20de%20pantalla%202026-02-04%20002105.png)
 ## Conclusión
 Sin duda, esta fue la prueba técnica más larga y desafiante que he realizado; sin embargo, también resultó ser muy enriquecedora e interesante.
 
