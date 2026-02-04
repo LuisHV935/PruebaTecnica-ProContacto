@@ -610,6 +610,12 @@ No, ya que esta enfocada particularmente en la relación e interacciones que tie
 ## Ejercicio 7: Ejercicio Integrador
 Este último ejercicio fue, sin ninguna duda, el más desafiante pero a la vez más enriquecedor, ya que me permitió reforzar lo aprendido en los módulos solicitados en el [Ejercicio 4](#e4), además de enfrentarme a dificultades reales a la hora de desarrollar e implementar funcionalidades para Salesforce.
 
+### Obtención del id de ProContacto
+![Peticion get al endpoint](Imagenes/ConsultaIdProcontacto.png)
+
+### Creación del field "idprocontacto"
+![Creación del field "idprocontacto"](Imagenes/idprocontacto.png)
+
 ### Código
 ### Clase: EjercicioIntegrador
 
@@ -728,6 +734,9 @@ public class estadoDetrigger {
     }
 }
 ```
+### Registro que resulta de llamar al método "insertarUnConatctParaTestear()" de la clase EjercicioIntegrador
+![Registro nuevo](Imagenes/PruebaDeFuncionamiento.png)
+
 ## Conclusión
 Sin duda, esta fue la prueba técnica más larga y desafiante que he realizado; sin embargo, también resultó ser muy enriquecedora e interesante.
 
