@@ -646,15 +646,6 @@ public class EjercicioIntegrador {
         }
         return emails;
     }
-    
-    public static void insertarUnConatctParaTestear(){
-        Contact nuevoContacto = new Contact(
-            FirstName = 'Luis',
-    		LastName = 'Hernandez',
-    		idprocontacto__c = '-Ok62XXuiJVi-aMU7pb_'
-			);
-        upsert nuevoContacto;
-    }
 }
 ```
 ### Trigger: ContactTrigger
@@ -743,9 +734,76 @@ public class estadoDetrigger {
     }
 }
 ```
-### Registro que resulta de llamar al método "insertarUnConatctParaTestear()" de la clase EjercicioIntegrador
-![Registro nuevo](Imagenes/PruebaDeFuncionamiento.png)
+### Test´s
+### Test para el trigger ContactTrigger
+```
+@isTest
+public class ContactTriggerTest {
+	@isTest static void testinsertar(){
+        Contact con = new Contact(FirstName = 'Luis', LastName = 'Hernandez', idprocontacto__C = '-Ok62XXuiJVi-aMU7pb_');
+        Test.startTest();
+        insert con;
+        Test.stopTest();
+        Contact conVeri = [SELECT Email, idprocontacto__c FROM Contact WHERE idprocontacto__c = '-Ok62XXuiJVi-aMU7pb_'];
+        Assert.areEqual('luis.hernandez@procontacto.com.mx',conVeri.Email);
+    }
+    
+    @isTest static void testactualizar(){
+        Contact con = new Contact(FirstName = 'Luis', LastName = 'Hernandez');
+        insert con;
+        Contact conupdate = [SELECT Id, idprocontacto__c FROM Contact WHERE Id =:con.Id];
+        conupdate.idprocontacto__c = '-Ok62XXuiJVi-aMU7pb_';
+        Test.startTest();
+        update conupdate;
+        Test.stopTest();
+        Contact conVeri = [SELECT Email, idprocontacto__c FROM Contact WHERE idprocontacto__c = '-Ok62XXuiJVi-aMU7pb_'];
+        Assert.areEqual('luis.hernandez@procontacto.com.mx',conVeri.Email);
+    }
 
+    @isTest static void triggerDesactivadotest(){
+        estadoDetrigger.desactivar();
+        Contact con = new Contact(FirstName = 'Luis', LastName = 'Hernandez');
+        Test.startTest();
+        estadoDetrigger.desactivar();
+        insert con;
+        Test.stopTest();    
+        estadoDetrigger.activar();
+    }
+}
+```
+### Overall:
+![Resultados del Test](Imagenes/Captura de pantalla 2026-02-03 235926.png)
+### Test para la clase EjercicioIntegrador
+```
+@isTest
+public class EjercicioIntegradorTest {
+	@isTest static void obtenerEmailsPorIdsTest(){
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource('usuarioProContacto');
+        mock.setStatusCode(200);
+        mock.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        Test.setMock(HttpCalloutMock.class, mock);
+        List<String> idProcontacto = new List<String>();
+        idProcontacto.add('-Ok62XXuiJVi-aMU7pb_');
+        Map<String,String> test = EjercicioIntegrador.obtenerEmailsPorIds(idProcontacto);
+        Assert.areEqual('luis.hernandez@procontacto.com.mx', test.get('-Ok62XXuiJVi-aMU7pb_'));
+    }
+    
+    @isTest static void notFound(){
+        StaticResourceCalloutMock mock = new StaticResourceCalloutMock();
+        mock.setStaticResource('usuarioProContacto');
+        mock.setStatusCode(404);
+        mock.setHeader('Content-Type', 'application/json;charset=UTF-8');
+        Test.setMock(HttpCalloutMock.class, mock);        
+        List<String> idProcontacto = new List<String>();
+        idProcontacto.add('-Ok62XXuiJVi-aMU7pbaassd_');
+        Map<String,String> test = EjercicioIntegrador.obtenerEmailsPorIds(idProcontacto);
+        Assert.areEqual(null, test.get('-Ok62XXuiJVi-aMU7pbaassd_'));
+    }
+}
+```
+### Overall:
+![Resultados del Test](Imagenes/Captura de pantalla 2026-02-04 002105.png)
 ## Conclusión
 Sin duda, esta fue la prueba técnica más larga y desafiante que he realizado; sin embargo, también resultó ser muy enriquecedora e interesante.
 
