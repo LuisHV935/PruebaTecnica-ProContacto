@@ -1,0 +1,23 @@
+trigger ContactTrigger on Contact (after update, after insert) {
+    if(!estadoDetrigger.getEstado()){
+        return;
+    }
+	List<String> idsProContacto = new List<String>();
+    for(Contact con : Trigger.new){
+        if(String.isNotBlank(con.idprocontacto__c)){
+            if(Trigger.isInsert){
+                idsProContacto.add(con.idprocontacto__c);
+            }else{
+                if(Trigger.isUpdate){
+					Contact old = Trigger.oldMap.get(con.Id);
+                    if(old.idprocontacto__c != con.idprocontacto__c){
+                        idsProContacto.add(con.idprocontacto__c);
+                    }
+                }
+            }
+        }
+    }
+    if(!idsProContacto.isEmpty()){
+        System.enqueueJob(new TriggerHelper(idsProContacto));
+    }
+}
